@@ -1,0 +1,26 @@
+body{
+    background-color: #fff7ed;
+    margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {  
+  text-rendering: optimizeLegibility;
+}
+
+.mobile-menu {
+
+  display: flex;
+  flex-direction: column;
+  
+  background-color: rgb(224, 95, 95);
+
+}
+
