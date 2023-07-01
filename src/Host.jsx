@@ -190,8 +190,8 @@ const HostVans=(porps, ref)=> {
 
 function Income() {
   return (
-    <div className='mt-16 '>
-      <img src={img} className='w-12/12 max-w-[700px]' >
+    <div className='mt-16 w-11/12  border-4 border-lime-700 '>
+      <img src={img} className='w-full max-w-[700px]' >
         </img> 
 
     </div>

@@ -39,12 +39,14 @@ function User() {
               <h1>
                      {doc.name}
               </h1>
+              <div className='hidden sm:flex flex-row gap-3'>
               <h1>
                       {doc.date}
               </h1>
               <h1>
                       {doc.time}
               </h1>
+              </div>
               <h1>
               &#8377;<span >{doc.price}</span>
               </h1>

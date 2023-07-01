@@ -1,8 +1,10 @@
-import { Link , useLocation, useLoaderData, Form, useRouteError} from 'react-router-dom'
+import { Link , useLocation, useLoaderData, Form, useRouteError, useNavigate, redirect} from 'react-router-dom'
 import {fetchById, hostVansupdate} from './firebase'
 import { useState } from 'react'
 
+
 function VanBooking() {
+  const navigate = useNavigate()
    const vanData  = useLoaderData()
     const [load , setLoad] = useState(false)
     const location = useLocation()
@@ -17,6 +19,7 @@ function VanBooking() {
       else{
         color = "bg-slate-900"
       }
+      console.log(location.pathname , "path")
    const backUrl = location.state?.params || ""
    const text = location.state?.type || "all"
  return (
@@ -55,12 +58,19 @@ function VanBooking() {
   }
   console.log(`${hours}:${minutes}`)
   const mail = localStorage.getItem("email")
-
-   const a=await hostVansupdate(mail,{...vanData,date:formattedDate,time:`${hours}:${minutes} ${subtime}`
-   ,ordTime : currentDate
-  })
-   
-  setLoad(false)
+  console.log(mail ,mail)
+  if (mail){
+    const a=await hostVansupdate(mail,{...vanData,date:formattedDate,time:`${hours}:${minutes} ${subtime}`
+    ,ordTime : currentDate
+    
+   })
+   return setLoad(false)
+  }
+  
+  navigate(`/login?message=NotLogged&redirect=${location.pathname}`)
+  
+  
+  
 }}  className={` ${load ? 'bg-orange-200':"bg-orange-400"} font-bold w-full p-2 mt-8 rounded-md  text-[20px] text-white`}>Rent this van</button>
      </div>
        </div>
