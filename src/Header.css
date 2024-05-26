@@ -1,6 +1,6 @@
-body{
-    background-color: #fff7ed;
-    margin: 0;
+body {
+  background-color: #fff7ed;
+  margin: 0;
 }
 
 *,
@@ -11,16 +11,13 @@ body{
   box-sizing: border-box;
 }
 
-body {  
+body {
   text-rendering: optimizeLegibility;
 }
 
 .mobile-menu {
-
   display: flex;
   flex-direction: column;
-  
+
   background-color: rgb(224, 95, 95);
-
 }
-
